@@ -182,7 +182,8 @@ Answer + source citations (filename + page number) returned to user
 
 Not sure which PDF to test with? A sample PDF is included in this repo!
 
-📄 **`test-document-v2.pdf`** — A 3-page document about Artificial Intelligence covering:
+
+📄 **[test-document-v2.pdf](https://github.com/user-attachments/files/26172226/test-document-v2.pdf)** — A 3-page document about Artificial Intelligence covering:
 - What is AI and its key branches
 - Popular AI models comparison
 - AI in Healthcare, Finance and Transportation
