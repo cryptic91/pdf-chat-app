@@ -1,0 +1,52 @@
+# ───────────────────────────────
+# Python
+# ───────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# ───────────────────────────────
+# Environment / Secrets
+# ───────────────────────────────
+.env
+# Keep the example file so others know what's needed
+!.env.example
+
+# ───────────────────────────────
+# App Runtime Data (auto-created)
+# ───────────────────────────────
+backend/uploads/
+backend/vectorstore/
+
+# ───────────────────────────────
+# OS Files
+# ───────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ───────────────────────────────
+# IDE / Editor
+# ───────────────────────────────
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ───────────────────────────────
+# Logs
+# ───────────────────────────────
+*.log
+logs/

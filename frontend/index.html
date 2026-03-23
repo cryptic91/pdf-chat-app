@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RakibAI — AI PDF ChatBot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <!-- Ambient background orbs -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <div class="app-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">RakibAI</span>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-label">Upload PDFs</p>
+        <div class="drop-zone" id="dropZone">
+          <div class="drop-icon">↑</div>
+          <p class="drop-title">Drop files here</p>
+          <p class="drop-sub">or click to browse</p>
+          <input type="file" id="fileInput" multiple accept=".pdf" hidden>
+        </div>
+        <div id="fileList" class="file-list"></div>
+        <button class="btn-upload" id="uploadBtn" disabled>
+          <span class="btn-text">Analyze Documents</span>
+          <span class="btn-loader" hidden>Processing…</span>
+        </button>
+      </div>
+
+      <div class="sidebar-section sidebar-stats" id="statsBox" style="display:none">
+        <p class="sidebar-label">Session</p>
+        <div class="stat-row">
+          <span class="stat-icon">📄</span>
+          <span id="statFiles">0 files loaded</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-icon">💬</span>
+          <span id="statMessages">0 messages</span>
+        </div>
+        <button class="btn-clear" id="clearBtn">Clear Session</button>
+      </div>
+
+      <div class="sidebar-footer">
+        <span>Powered by Gemini 1.5 Flash</span>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- Top bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 class="topbar-title">Chat with your Documents</h1>
+          <p class="topbar-sub">Upload PDFs, then ask anything about them</p>
+        </div>
+        <div class="status-pill" id="statusPill">
+          <span class="status-dot"></span>
+          <span id="statusText">Waiting for upload</span>
+        </div>
+      </header>
+
+      <!-- Chat area -->
+      <div class="chat-container" id="chatContainer">
+        <div class="empty-state" id="emptyState">
+          <div class="empty-icon">⬡</div>
+          <h2>No documents loaded yet</h2>
+          <p>Upload one or more PDFs from the sidebar<br>to start a conversation with your documents.</p>
+          <div class="empty-features">
+            <span>✦ Multi-PDF support</span>
+            <span>✦ Source citations</span>
+            <span>✦ Conversation memory</span>
+          </div>
+        </div>
+        <div class="messages" id="messages"></div>
+      </div>
+
+      <!-- Input bar -->
+      <div class="input-bar">
+        <div class="input-wrapper">
+          <textarea
+            id="questionInput"
+            class="question-input"
+            placeholder="Ask something about your documents…"
+            rows="1"
+            disabled
+          ></textarea>
+          <button class="send-btn" id="sendBtn" disabled>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+        <p class="input-hint">Press <kbd>Enter</kbd> to send · <kbd>Shift+Enter</kbd> for new line</p>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
